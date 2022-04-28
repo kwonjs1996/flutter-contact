@@ -16,14 +16,26 @@ class MyApp extends StatelessWidget {
         leading: Icon(Icons.expand_more),title: Text('금호동3가'),
         actions: [Icon(Icons.search), Icon(Icons.menu), Icon(Icons.notifications)],
         ),
-        body: SizedBox(
+        body: Container(
+          height: 150, padding: EdgeInsets.all(10),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [Image.asset('assets/photo.png', width: 100,height: 100,),
-             Column(children: [Text('캐논 DSLR 100D (단렌즈,충전기 16기가SD 포함'),
-              Text('성동구 행당동  끌올 10분 전'),
-              Text('210,000원'),
-              Row(children: [Icon(Icons.favorite_border),Text('4')],)],
+            children: [Image.asset('assets/photo.png', width: 100),
+              Container(
+                width: 250,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('캐논 DSLR 100D 단렌즈,충전기 16기가 SD 포함', style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text('성동구 행당동  끌올 10분 전', style: TextStyle(color: Colors.black38),),
+                    Text('210,000원'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite_border),
+                        Text('4')
+                      ],
+                )],
+                ),
               )],
               )
         ),
