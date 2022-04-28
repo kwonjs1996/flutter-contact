@@ -13,13 +13,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          actions: [Icon(Icons.star), Icon(Icons.phone)], title: Text('ddd'),
+        leading: Icon(Icons.expand_more),title: Text('금호동3가'),
+        actions: [Icon(Icons.search), Icon(Icons.menu), Icon(Icons.notifications)],
         ),
         body: SizedBox(
-          child: IconButton(
-            icon: Icon(Icons.star), 
-            onPressed: (){},
-          )
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Image.asset('assets/photo.png', width: 100,height: 100,),
+             Column(children: [Text('캐논 DSLR 100D (단렌즈,충전기 16기가SD 포함'),
+              Text('성동구 행당동  끌올 10분 전'),
+              Text('210,000원'),
+              Row(children: [Icon(Icons.favorite_border),Text('4')],)],
+              )],
+              )
         ),
         bottomNavigationBar: BottomAppBar(
           child: SizedBox(
