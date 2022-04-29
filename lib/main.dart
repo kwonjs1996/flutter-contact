@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           height: 150, padding: EdgeInsets.all(10),
           child: Row(
             children: [Image.asset('assets/photo.png', width: 100),
-              Container(
+              SizedBox(
                 width: 250,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
