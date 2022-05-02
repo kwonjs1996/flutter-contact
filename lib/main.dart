@@ -12,48 +12,36 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-        leading: Icon(Icons.expand_more),title: Text('금호동3가'),
-        actions: [Icon(Icons.search), Icon(Icons.menu), Icon(Icons.notifications)],
-        ),
-        body: Container(
-          height: 150, padding: EdgeInsets.all(10),
-          child: Row(
-            children: [Image.asset('assets/photo.png', width: 100),
-              SizedBox(
-                width: 250,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('캐논 DSLR 100D 단렌즈,충전기 16기가 SD 포함', style: TextStyle(fontWeight: FontWeight.bold),),
-                    Text('성동구 행당동  끌올 10분 전', style: TextStyle(color: Colors.black38),),
-                    Text('210,000원'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(Icons.favorite_border),
-                        Text('4')
-                      ],
-                )],
-                ),
-              )],
-              )
-        ),
-        bottomNavigationBar: BottomAppBar(
-          child: SizedBox(
-            height: 70,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(Icons.phone),
-                Icon(Icons.message),
-                Icon(Icons.contact_page),
-              ],
-            ),
+          appBar: AppBar(),
+          //ListView = 스크롤바 생김 Column으로는 아무리 해도 스크롤 생기지 않음
+          //controller를 넣으면 스크롤 위치 감시 가능, 메모리절약기능
+          body: ListView(
+            children: [
+              Text('안녕'),
+              Text('안녕'),
+              Text('안녕'),
+              Text('안녕'),
+              Text('안녕'),
+              Text('안녕'),
+            ],
           ),
-        ),
       )
     );
 
+  }
+}
+
+
+// 재사용이 많은 UI들, 큰페이지들을 커스텀 위젯으로 만든다
+
+
+class ShopItem extends StatelessWidget {
+  const ShopItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        child: Text('안녕')
+    );
   }
 }
